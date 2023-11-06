@@ -11,4 +11,5 @@ import java.util.UUID;
 public interface StarRepository extends JpaRepository<Star, UUID> {
     List<Star> findAllByAge(int age);
     Optional<Star> findByName(String name);
+
 }

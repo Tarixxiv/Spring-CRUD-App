@@ -16,7 +16,7 @@ import java.util.UUID;
 
 @RestController
 @AllArgsConstructor
-public class PlanetControlller {
+public class PlanetController {
     private final PlanetService service;
     private final PlanetToResponseFunction planetToResponse;
     private final PlanetsToResponseFunction planetsToResponse;

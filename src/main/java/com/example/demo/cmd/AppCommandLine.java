@@ -26,6 +26,7 @@ public class AppCommandLine implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
+        /*
         Scanner scanner = new Scanner(System.in);
         String command;
         main_loop:
@@ -129,5 +130,7 @@ public class AppCommandLine implements CommandLineRunner {
                 }
             }
         }
+
+    */
     }
 }

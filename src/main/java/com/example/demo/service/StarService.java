@@ -37,8 +37,8 @@ public class StarService {
         repository.save(star);
     }
 
-    public void delete(Star star){
-        repository.delete(star);
+    public void delete(UUID id){
+        repository.findById(id).ifPresent(repository::delete);
     }
 
 }

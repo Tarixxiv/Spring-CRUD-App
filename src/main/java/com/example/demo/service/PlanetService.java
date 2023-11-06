@@ -18,7 +18,7 @@ public class PlanetService{
         this.repository = repository;
         this.starRepository = starRepository;
     }
-    public Optional<Planet> find(UUID id) {return repository.find(id);}
+    public Optional<Planet> find(UUID id) {return repository.findById(id);}
     public Optional<Planet> findByName(String name){
         return repository.findByName(name);
     }
