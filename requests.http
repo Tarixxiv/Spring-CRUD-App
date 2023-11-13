@@ -1,0 +1,7 @@
+### Get all planets
+
+GET http://localhost:8080/api/planets
+
+### Get all stars
+
+GET http://localhost:8080/api/stars

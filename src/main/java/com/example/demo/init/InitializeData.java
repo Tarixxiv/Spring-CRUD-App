@@ -5,6 +5,7 @@ import com.example.demo.entity.Star;
 import com.example.demo.service.PlanetService;
 import com.example.demo.service.StarService;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class InitializeData implements InitializingBean {
     List<String> starNames = new ArrayList<>(List.of("Barlon","Seriff","Durfar"));
     List<Integer> ages = new ArrayList<>(List.of(4,6,7));
 
-
+    @Autowired
     InitializeData(PlanetService planetService, StarService starService){
         this.planetService = planetService;
         this.starService = starService;
@@ -28,7 +29,6 @@ public class InitializeData implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() {
-        if (planetService.findAll().isEmpty()){
             for (int i = 0; i < starNames.size(); i++) {
                 starService.create(Star.builder().uuid(UUID.randomUUID())
                         .name(starNames.get(i))
@@ -44,6 +44,6 @@ public class InitializeData implements InitializingBean {
                         .star(stars.get(i%stars.size()))
                         .build());
             }
-        }
+
     }
 }

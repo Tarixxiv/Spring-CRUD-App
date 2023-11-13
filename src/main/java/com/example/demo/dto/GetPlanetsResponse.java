@@ -4,14 +4,22 @@ import lombok.*;
 
 import java.util.List;
 import java.util.UUID;
-@Data
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@Getter
+@Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@ToString
+@EqualsAndHashCode
 public class GetPlanetsResponse {
 
-    @Data
-    @AllArgsConstructor(access = AccessLevel.PRIVATE)
+    @Getter
+    @Setter
     @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor(access = AccessLevel.PRIVATE)
+    @ToString
+    @EqualsAndHashCode
     public static class Planet{
         UUID id;
         String name;
