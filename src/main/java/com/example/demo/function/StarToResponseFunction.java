@@ -12,6 +12,7 @@ public class StarToResponseFunction implements Function<Star, GetStarResponse> {
         return GetStarResponse.builder()
                 .id(entity.getUuid())
                 .name(entity.getName())
+                .age(entity.getAge())
                 .build();
     }
 

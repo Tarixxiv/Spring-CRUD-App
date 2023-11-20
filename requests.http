@@ -5,3 +5,46 @@ GET http://localhost:8080/api/planets
 ### Get all stars
 
 GET http://localhost:8080/api/stars
+
+### Puts planet
+
+PUT http://localhost:8080/api/planets/3c6f1eb1-8069-44ab-988f-d7fed2b65d87
+Content-Type: application/json
+Authorization: Basic a2V2aW46dXNlcnVzZXI=
+
+{
+  "name": "Mars",
+  "population": 6000,
+  "star": "f5875513-bf7b-4ae1-b8a5-5b70a1b90e76"
+}
+
+### Get created planet
+GET http://localhost:8080/api/planets/3c6f1eb1-8069-44ab-988f-d7fed2b65d87
+
+
+### Update created planet
+
+
+### Get stars
+GET http://localhost:8080/api/stars
+
+###
+PUT http://localhost:8080/api/stars/3c6f1eb1-8069-44ab-988f-d7fed2b65d49
+Content-Type: application/json
+Authorization: Basic a2V2aW46dXNlcnVzZXI=
+
+{
+  "name": "Sol",
+  "age": 5
+}
+###
+GET http://localhost:8080/api/stars/f5875513-bf7b-4ae1-b8a5-5b70a1b90e76
+
+###
+GET http://localhost:8080/api/stars/3c6f1eb1-8069-44ab-988f-d7fed2b65d49
+
+###
+DELETE http://localhost:8080/api/stars/3c6f1eb1-8069-44ab-988f-d7fed2b65d49
+
+###
+GET http://localhost:8080/api/stars

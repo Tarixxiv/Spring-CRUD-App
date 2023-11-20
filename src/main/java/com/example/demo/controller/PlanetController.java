@@ -51,12 +51,12 @@ public class PlanetController {
     }
     @PutMapping("/api/planets/{id}")
     @ResponseStatus(HttpStatus.CREATED)
-    public void putPlanet(@PathVariable("id") UUID id,@RequestBody PutPlanetRequest request){
+    public void putPlanet(@PathVariable("id") UUID id,
+                          @RequestBody PutPlanetRequest request){
         service.create(requestToPlanet.apply(id,request));
     }
     @DeleteMapping("/api/planets/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-
     public void deletePlanet(@PathVariable("id") UUID id){
         service.find(id).ifPresentOrElse(
                 planet -> service.delete(id),

@@ -12,7 +12,6 @@ import java.util.function.Function;
 public class PlanetsToResponseFunction implements Function<List<Planet>,GetPlanetsResponse>{
     @Override
     public GetPlanetsResponse apply(List<Planet> entities) {
-        //entities = List.of(Planet.builder().name("Arkab").population(30).star(Star.builder().name("test").age(5).build()).build());
         return GetPlanetsResponse.builder()
                 .planets(entities.stream()
                         .map(planet -> GetPlanetsResponse.Planet.builder()
