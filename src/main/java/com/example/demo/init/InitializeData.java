@@ -18,9 +18,9 @@ public class InitializeData implements InitializingBean {
     StarService starService;
     List<String> names = new ArrayList<>(List.of("Primaris","Secundus","Tertius", "Quartus", "Seriff", "Tannira", "Ishran", "Mersonar","Navalia","Castespes","Becalux","Vistodiet"));
     List<Integer> population = new ArrayList<>(List.of(885355,672654,589504182,5026,765654,672654,589504182,5026,871494,0,950573,885355));
-    List<String> starUUIDStrings = new ArrayList<>(List.of("f5875513-bf7b-4ae1-b8a5-5b70a1b90e76","f5875513-bf7b-4ae1-b8a5-5b70a1b90e77","f5875513-bf7b-4ae1-b8a5-5b70a1b90e78"));
-    List<String> starNames = new ArrayList<>(List.of("Barlon","Seriff","Durfar"));
-    List<Integer> ages = new ArrayList<>(List.of(4,6,7));
+    List<String> starUUIDStrings = new ArrayList<>(List.of("f5875513-bf7b-4ae1-b8a5-5b70a1b90e76","f5875513-bf7b-4ae1-b8a5-5b70a1b90e77","f5875513-bf7b-4ae1-b8a5-5b70a1b90e78","f5875513-bf8b-4ae1-b8a5-5b70a1b90e78"));
+    List<String> starNames = new ArrayList<>(List.of("Barlon","Seriff","Durfar","Empty"));
+    List<Integer> ages = new ArrayList<>(List.of(4,6,7,1));
 
     @Autowired
     InitializeData(PlanetService planetService, StarService starService){
@@ -42,7 +42,7 @@ public class InitializeData implements InitializingBean {
                         .uuid(UUID.randomUUID())
                         .name(names.get(i))
                         .population(population.get(i))
-                        .star(stars.get(i%stars.size()))
+                        .star(stars.get(i%3))
                         .build());
             }
 

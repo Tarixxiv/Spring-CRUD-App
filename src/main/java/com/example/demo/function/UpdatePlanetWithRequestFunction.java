@@ -2,9 +2,10 @@ package com.example.demo.function;
 
 import com.example.demo.dto.PatchPlanetRequest;
 import com.example.demo.entity.Planet;
+import org.springframework.stereotype.Component;
 
 import java.util.function.BiFunction;
-
+@Component
 public class UpdatePlanetWithRequestFunction implements BiFunction<Planet, PatchPlanetRequest, Planet> {
 
     @Override

@@ -1,11 +1,10 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.GetStarResponse;
-import com.example.demo.dto.GetStarsResponse;
-import com.example.demo.dto.PutStarRequest;
+import com.example.demo.dto.*;
 import com.example.demo.function.RequestToStarFunction;
 import com.example.demo.function.StarToResponseFunction;
 import com.example.demo.function.StarsToResponseFunction;
+import com.example.demo.function.UpdateStarWithRequestFunction;
 import com.example.demo.service.StarService;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +22,14 @@ public class StarController {
     private final StarToResponseFunction starToResponse;
     private final StarsToResponseFunction starsToResponse;
     private final RequestToStarFunction requestToStar;
+    private final UpdateStarWithRequestFunction updateToStar;
     @Autowired
-    public StarController(StarService service, StarToResponseFunction starToResponse, StarsToResponseFunction starsToResponse, RequestToStarFunction requestToStar) {
+    public StarController(StarService service, StarToResponseFunction starToResponse, StarsToResponseFunction starsToResponse, RequestToStarFunction requestToStar, UpdateStarWithRequestFunction updateToStar) {
         this.service = service;
         this.starToResponse = starToResponse;
         this.starsToResponse = starsToResponse;
         this.requestToStar = requestToStar;
+        this.updateToStar = updateToStar;
     }
 
     @GetMapping("api/stars")
@@ -63,6 +64,17 @@ public class StarController {
                         }
                 );
 
+    }
+
+    @PatchMapping("/api/stars/{id}")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public void patchStar(@PathVariable UUID id, @RequestBody PatchStarRequest request){
+        service.find(id).ifPresentOrElse(
+                star -> service.create(updateToStar.apply(star, request)),
+                () -> {
+                    throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+                }
+        );
     }
 
 }
