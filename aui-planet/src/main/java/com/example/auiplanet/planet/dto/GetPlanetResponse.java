@@ -13,8 +13,6 @@ public class GetPlanetResponse {
     @Builder
     public static class Star {
         private UUID id;
-        private String name;
-        private int age;
     }
 
     private UUID id;
