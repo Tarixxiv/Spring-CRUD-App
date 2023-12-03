@@ -19,7 +19,7 @@ public class AuiGatewayApplication {
 	public RouteLocator routeLocator(RouteLocatorBuilder builder,
 									 @Value("${aui.planet.url}") String planetUrl,
 									 @Value("${aui.star.url}") String starUrl,
-									 @Value("${aui.gatewy.host}") String host
+									 @Value("${aui.gateway.host}") String host
 
 	){
 		return  builder
