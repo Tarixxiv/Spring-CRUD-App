@@ -22,7 +22,7 @@ public class InitializeData implements InitializingBean {
     }
 
     @Override
-    public void afterPropertiesSet() throws Exception {
+    public void afterPropertiesSet() {
         for (int i = 0; i < starNames.size(); i++) {
             starService.create(Star.builder().uuid(UUID.fromString(starUUIDStrings.get(i)))
                     .name(starNames.get(i))

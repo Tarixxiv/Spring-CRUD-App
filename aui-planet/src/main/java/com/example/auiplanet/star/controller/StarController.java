@@ -1,6 +1,7 @@
 package com.example.auiplanet.star.controller;
 
 
+import com.example.auiplanet.star.entity.Star;
 import com.example.auiplanet.star.service.StarService;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,17 @@ public class StarController {
     public StarController(StarService service) {
         this.service = service;
 
+    }
+
+    @PutMapping("/api/stars/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void putStar(@PathVariable UUID id, @RequestBody Star star) throws Exception{
+        try{
+            service.create(star);
+        }
+        catch (Exception e){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        }
     }
 
     @DeleteMapping("/api/stars/{id}")

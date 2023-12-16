@@ -39,6 +39,7 @@ public class StarService {
 
     public void create(Star star){
         repository.save(star);
+        eventRepository.put(star,star.getUuid());
     }
 
     public void delete(UUID id){
