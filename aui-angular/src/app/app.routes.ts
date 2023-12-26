@@ -3,6 +3,8 @@ import {StarListComponent} from "./star/view/star-list/star-list.component";
 import {NgModule} from "@angular/core";
 import {StarEditComponent} from "./star/view/star-edit/star-edit.component";
 import {StarViewComponent} from "./star/view/star-view/star-view.component";
+import {PlanetEditComponent} from "./planet/view/planet-edit/planet-edit.component";
+import {PlanetViewComponent} from "./planet/view/planet-view/planet-view.component";
 
 export const routes: Routes = [
   {
@@ -18,9 +20,14 @@ export const routes: Routes = [
     path: "stars/:uuid"
   },
   {
-    component: StarListComponent,
-    path: "planets"
+    component: PlanetViewComponent,
+    path: "planets/:uuid"
+  },
+  {
+    component: PlanetEditComponent,
+    path: "planets/:uuid/edit"
   }
+
 ];
 
 @NgModule({

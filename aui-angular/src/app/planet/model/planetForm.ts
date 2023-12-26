@@ -1,5 +1,4 @@
-export interface Planet {
-  id: string
+export interface PlanetForm {
   name: string
   population: number
   star: string
