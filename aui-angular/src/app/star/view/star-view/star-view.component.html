@@ -1,4 +1,5 @@
 <article *ngIf="star">
+  <h2>Star details</h2>
   <div>
     <label>Name:</label>
     <label>{{star.name}}</label>
@@ -7,4 +8,25 @@
     <label>Age:</label>
     <label>{{star.age}}</label>
   </div>
+  <h3>Planets</h3>
+  <table *ngIf="planets">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let planet of planets.planets">
+      <a [routerLink]="['/planets',planet.id]">{{planet.name}}</a>
+      <td>
+        <button (click)="onDelete(planet)">Delete</button>
+      </td>
+      <td>
+        <a [routerLink]="['/stars',planet.id, 'edit']">Edit</a>
+      </td>
+    </tr>
+    </tbody>
+
+  </table>
 </article>
