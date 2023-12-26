@@ -1,5 +1,5 @@
 <article *ngIf="planet">
-  <h2>Star details</h2>
+  <h2>Planet details</h2>
   <div>
     <label>Name:</label>
     <label>{{planet.name}}</label>
@@ -7,5 +7,9 @@
   <div>
     <label>Population:</label>
     <label>{{planet.population}}</label>
+  </div>
+  <div *ngIf="star">
+    <label>Star:</label>
+    <label>{{star.name}}</label>
   </div>
 </article>

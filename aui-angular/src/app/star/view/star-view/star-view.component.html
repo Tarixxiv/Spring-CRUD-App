@@ -18,12 +18,12 @@
     </thead>
     <tbody>
     <tr *ngFor="let planet of planets.planets">
-      <a [routerLink]="['/planets',planet.id]">{{planet.name}}</a>
+      <a [routerLink]="['/stars',star.id,'planets',planet.id]">{{planet.name}}</a>
       <td>
         <button (click)="onDelete(planet)">Delete</button>
       </td>
       <td>
-        <a [routerLink]="['/planets',planet.id, 'edit']">Edit</a>
+        <a [routerLink]="['/stars',star.id,'planets',planet.id, 'edit']">Edit</a>
       </td>
     </tr>
     </tbody>

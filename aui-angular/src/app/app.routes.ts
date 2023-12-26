@@ -21,11 +21,11 @@ export const routes: Routes = [
   },
   {
     component: PlanetViewComponent,
-    path: "planets/:uuid"
+    path: "stars/:uuid/planets/:puuid"
   },
   {
     component: PlanetEditComponent,
-    path: "planets/:uuid/edit"
+    path: "stars/:uuid/planets/:puuid/edit"
   }
 
 ];
