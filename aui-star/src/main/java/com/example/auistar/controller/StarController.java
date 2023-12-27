@@ -50,6 +50,11 @@ public class StarController {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
+    @PutMapping("/api/stars")
+    public void putNewPlanet(@RequestBody PutStarRequest request){
+        putPlanet(UUID.randomUUID(), request);
+    }
+
     @PutMapping("/api/stars/{id}")
     @ResponseStatus(HttpStatus.CREATED)
     public void putPlanet(@PathVariable("id") UUID id,

@@ -5,6 +5,7 @@ import {StarEditComponent} from "./star/view/star-edit/star-edit.component";
 import {StarViewComponent} from "./star/view/star-view/star-view.component";
 import {PlanetEditComponent} from "./planet/view/planet-edit/planet-edit.component";
 import {PlanetViewComponent} from "./planet/view/planet-view/planet-view.component";
+import {StarCreateComponent} from "./star/view/star-create/star-create.component";
 
 export const routes: Routes = [
   {
@@ -14,6 +15,10 @@ export const routes: Routes = [
   {
     component: StarEditComponent,
     path: "stars/:uuid/edit"
+  },
+  {
+    component: StarCreateComponent,
+    path: "stars/create"
   },
   {
     component: StarViewComponent,

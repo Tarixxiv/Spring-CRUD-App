@@ -24,10 +24,4 @@ export class StarListComponent implements OnInit{
     this.service.deleteStar(star.id).subscribe(() => this.ngOnInit())
   }
 
-  onEdit(star: Star): void{
-
-  }
-
-
-
 }

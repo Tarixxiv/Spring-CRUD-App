@@ -1,0 +1,17 @@
+<article *ngIf="star">
+  <form class="container" #form="ngForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name:</label>
+      <input id="name" name="name" [(ngModel)]="star.name">
+    </div>
+    <div>
+      <label for="age">Age:</label>
+      <input id="age" name="age" [(ngModel)]="star.age">
+    </div>
+    <div>
+      <button type="submit">Create</button>
+      <button type="button" (click)="form.resetForm()">Reset</button>
+    </div>
+  </form>
+</article>
+

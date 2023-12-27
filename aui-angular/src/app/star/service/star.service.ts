@@ -22,10 +22,12 @@ export class StarService {
     return  this.http.delete('api/stars/' + uuid);
   }
 
+  putNewStar(request: StarForm): Observable<any> {
+    return this.http.put('api/stars', request)
+  }
 
   putStar(uuid: string, request: StarForm): Observable<any> {
     return this.http.put('/api/stars/' + uuid, request)
   }
-
 
 }
