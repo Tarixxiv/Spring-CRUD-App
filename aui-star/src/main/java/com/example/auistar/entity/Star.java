@@ -17,7 +17,7 @@ import java.util.UUID;
 public class Star implements Serializable {
     @Id
     private UUID uuid;
-    @Column(unique = true)
+    @Column
     String name;
     @Column
     int age; //counted in billion years
