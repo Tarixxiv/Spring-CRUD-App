@@ -1,0 +1,16 @@
+<article *ngIf="planet">
+  <form class="container" #form="ngForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Name:</label>
+      <input id="name" name="name" [(ngModel)]="planet.name">
+    </div>
+    <div>
+      <label for="population">Population:</label>
+      <input id="population" name="population" [(ngModel)]="planet.population">
+    </div>
+    <div>
+      <button type="submit">Create</button>
+      <button type="button" (click)="form.resetForm(original)">Reset</button>
+    </div>
+  </form>
+</article>

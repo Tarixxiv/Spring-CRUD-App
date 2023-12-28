@@ -53,6 +53,12 @@ public class PlanetController {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
+    @PutMapping("/api/planets")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void putNewPlanet(@RequestBody PutPlanetRequest request){
+        putPlanet(UUID.randomUUID(),request);
+    }
+
     @PutMapping("/api/planets/{id}")
     @ResponseStatus(HttpStatus.CREATED)
     public void putPlanet(@PathVariable("id") UUID id,

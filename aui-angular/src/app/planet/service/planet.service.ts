@@ -25,6 +25,10 @@ export class PlanetService {
     return  this.http.delete('api/planets/' + uuid);
   }
 
+  putNewPlanet(request: PlanetForm): Observable<any>{
+    return this.http.put('api/planets', request)
+  }
+
   putPlanet(uuid: string, request: PlanetForm): Observable<any> {
     return this.http.put('/api/planets/' + uuid, request)
   }

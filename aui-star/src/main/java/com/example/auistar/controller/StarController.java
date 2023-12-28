@@ -51,13 +51,14 @@ public class StarController {
     }
 
     @PutMapping("/api/stars")
-    public void putNewPlanet(@RequestBody PutStarRequest request){
-        putPlanet(UUID.randomUUID(), request);
+    @ResponseStatus(HttpStatus.CREATED)
+    public void putNewStar(@RequestBody PutStarRequest request){
+        putStar(UUID.randomUUID(), request);
     }
 
     @PutMapping("/api/stars/{id}")
     @ResponseStatus(HttpStatus.CREATED)
-    public void putPlanet(@PathVariable("id") UUID id,
+    public void putStar(@PathVariable("id") UUID id,
                           @RequestBody PutStarRequest request){
         service.create(requestToStar.apply(id,request));
     }
