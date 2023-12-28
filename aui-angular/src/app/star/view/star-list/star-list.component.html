@@ -1,0 +1,26 @@
+
+<header><h2>Stars</h2></header>
+
+<table *ngIf="stars">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let star of stars.stars">
+      <a [routerLink]="['/stars',star.id]">{{star.name}}</a>
+      <td>
+        <button (click)="onDelete(star)">Delete</button>
+      </td>
+      <td>
+        <a [routerLink]="['/stars',star.id, 'edit']">Edit</a>
+      </td>
+    </tr>
+    <tr>
+      <a [routerLink]="'/stars/create'">[Add new]</a>
+    </tr>
+  </tbody>
+
+</table>

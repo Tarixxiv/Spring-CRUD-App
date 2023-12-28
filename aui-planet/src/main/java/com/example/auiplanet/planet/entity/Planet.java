@@ -17,7 +17,7 @@ import java.util.UUID;
 public class Planet implements Serializable, Comparable {
     @Id
     private UUID uuid;
-    @Column(unique = true)
+    @Column
     String name;
     @Column
     int population;
