@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NgIf} from "@angular/common";
 import {PlanetService} from "../../service/planet.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, RouterLink} from "@angular/router";
 import {Planet} from "../../model/planet";
 import {Star} from "../../../star/model/star";
 import {StarService} from "../../../star/service/star.service";
@@ -9,9 +9,10 @@ import {StarService} from "../../../star/service/star.service";
 @Component({
   selector: 'app-planet-view',
   standalone: true,
-    imports: [
-        NgIf
-    ],
+  imports: [
+    NgIf,
+    RouterLink
+  ],
   templateUrl: './planet-view.component.html',
   styleUrl: './planet-view.component.css'
 })
