@@ -7,6 +7,7 @@ import com.example.demo.service.StarService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 import java.util.UUID;
@@ -25,6 +26,7 @@ public class AppCommandLine implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
+        /*
         Scanner scanner = new Scanner(System.in);
         String command;
         main_loop:
@@ -94,12 +96,13 @@ public class AppCommandLine implements CommandLineRunner {
                 case "find_all_planets_by_star" ->{
                     try{
                         String starName = scanner.next();
-                        Optional<Star> star = starService.findByName(starName);
-                        if (star.isEmpty()){
+                        Optional<List<Planet>> results = planetService.findAllByStar(starName);
+                        if (results.isEmpty()){
                             throw new IllegalArgumentException();
                         }
+                        //noinspection OptionalGetWithoutIsPresent
                         for (Planet planet:
-                                planetService.findAllByStar(star.get())) {
+                                planetService.findAllByStar(starName).get()) {
                             System.out.println(planet);
                         }
                     }catch (IllegalArgumentException e){
@@ -114,7 +117,7 @@ public class AppCommandLine implements CommandLineRunner {
                         if (planet.isEmpty()) {
                             throw new IllegalArgumentException();
                         }
-                        planet.ifPresent(planetService::delete);
+                        planet.ifPresent(value -> planetService.delete(value.getUuid()));
                         System.out.println("Planet deleted");
                     }catch (IllegalArgumentException e){
                     System.out.println("Bad request");
@@ -127,5 +130,7 @@ public class AppCommandLine implements CommandLineRunner {
                 }
             }
         }
+
+    */
     }
 }

@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.entity.Star;
 import com.example.demo.repository.StarRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.UUID;
 public class StarService {
     private final StarRepository repository;
 
-
+    @Autowired
     public StarService(StarRepository repository) {
         this.repository = repository;
     }
@@ -37,8 +38,8 @@ public class StarService {
         repository.save(star);
     }
 
-    public void delete(Star star){
-        repository.delete(star);
+    public void delete(UUID id){
+        repository.findById(id).ifPresent(repository::delete);
     }
 
 }

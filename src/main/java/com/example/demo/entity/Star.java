@@ -23,7 +23,7 @@ public class Star implements Serializable {
     String name;
     @Column
     int age; //counted in billion years
-    @OneToMany(mappedBy = "star")
+    @OneToMany(mappedBy = "star", cascade = CascadeType.REMOVE)
     @Singular
     @ToString.Exclude
     List<Planet> planets = new ArrayList<>();
