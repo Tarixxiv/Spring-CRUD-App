@@ -12,12 +12,11 @@
 		<relativePath/>
 	</parent>
 
-	<groupId>pl.edu.pg.eti.kask</groupId>
-	<artifactId>simple-rpg-gateway</artifactId>
+	<groupId>com.example</groupId>
+	<artifactId>auigateway</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 
-	<name>Simple RPG Gateway</name>
-	<description>Simple RPG game, gateway module.</description>
+	<name>auigateway</name>
 
 	<properties>
 		<java.version>17</java.version>
