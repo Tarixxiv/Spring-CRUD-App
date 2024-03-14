@@ -3,23 +3,25 @@
 
 <table *ngIf="stars">
   <thead>
-    <tr>
-      <th>Name</th>
-      <th>Delete</th>
-    </tr>
   </thead>
   <tbody>
     <tr *ngFor="let star of stars.stars">
-      <a [routerLink]="['/stars',star.id]">{{star.name}}</a>
+      <td>
+      <a [routerLink]="['/stars',star.id]" class="router-link">{{star.name}}</a>
+      </td>
       <td>
         <button (click)="onDelete(star)">Delete</button>
       </td>
       <td>
-        <a [routerLink]="['/stars',star.id, 'edit']">Edit</a>
+        <a [routerLink]="['/stars',star.id, 'edit']" class="button-link">Edit</a>
       </td>
     </tr>
     <tr>
-      <a [routerLink]="'/stars/create'">[Add new]</a>
+      <td></td>
+      <td>
+      <a [routerLink]="'/stars/create'" class="button-link">Add new</a>
+      </td>
+      <td></td>
     </tr>
   </tbody>
 

@@ -1,33 +1,40 @@
 <article *ngIf="star">
   <h2>Star details</h2>
-  <div>
-    <label>Name:</label>
-    <label>{{star.name}}</label>
-  </div>
-  <div>
-    <label>Age:</label>
-    <label>{{star.age}}</label>
-  </div>
+  <table>
+    <tr>
+      <td>
+        <label>Name:</label>
+      </td>
+      <td>
+        <label>{{star.name}}</label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Age:</label>
+      </td>
+      <td>
+        <label>{{star.age}}</label>
+      </td>
+    </tr>
+  </table>
+
   <h3>Planets</h3>
   <table *ngIf="planets">
-    <thead>
-    <tr>
-      <th>Name</th>
-      <th>Delete</th>
-    </tr>
-    </thead>
     <tbody>
     <tr *ngFor="let planet of planets.planets">
+      <td>
       <a [routerLink]="['/stars',star.id,'planets',planet.id]">{{planet.name}}</a>
+      </td>
       <td>
         <button (click)="onDelete(planet)">Delete</button>
       </td>
       <td>
-        <a [routerLink]="['/stars',star.id,'planets',planet.id, 'edit']">Edit</a>
+        <a [routerLink]="['/stars',star.id,'planets',planet.id, 'edit']" class="button-link">Edit</a>
       </td>
     </tr>
     <tr>
-      <a [routerLink]="['/stars',star.id,'planets','create']">[Add new]</a>
+      <a [routerLink]="['/stars',star.id,'planets','create']" class="button-link">Add new</a>
     </tr>
     </tbody>
   </table>

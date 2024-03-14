@@ -1,0 +1,14 @@
+
+.mainDiv {
+  background-color: #333333; /* Grey with 0.7 opacity */
+  padding: 20px; /* Example padding */
+  margin: 20px; /* Example margin */
+  border-radius: 10px;
+  display: inline-block; /* Display as inline-block */
+  max-width: 100%; /* Limit maximum width to fit its content */
+  align-items: center;
+}
+.mainDiv > * {
+  opacity: 1; /* Set contents to have 100% opacity */
+}
+

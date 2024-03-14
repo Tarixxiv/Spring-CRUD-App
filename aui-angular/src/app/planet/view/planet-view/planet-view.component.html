@@ -1,15 +1,31 @@
 <article *ngIf="planet">
   <h2>Planet details</h2>
-  <div>
-    <label>Name:</label>
-    <label>{{planet.name}}</label>
-  </div>
-  <div>
-    <label>Population:</label>
-    <label>{{planet.population}}</label>
-  </div>
-  <div *ngIf="star">
-    <label>Star:</label>
-    <a [routerLink]="['/stars',star.id]">{{star.name}}</a>
-  </div>
+  <table>
+    <tr>
+      <td>
+        <label>Name:</label>
+      </td>
+      <td>
+        <label>{{planet.name}}</label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Population:</label>
+      </td>
+      <td>
+        <label>{{planet.population}}</label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label>Star:</label>
+      </td>
+      <td *ngIf="star">
+        <u>
+          <a [routerLink]="['/stars',star.id]">{{star.name}}</a>
+        </u>
+      </td>
+    </tr>
+  </table>
 </article>

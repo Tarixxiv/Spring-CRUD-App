@@ -39,7 +39,9 @@ public class StarService {
 
     public void create(Star star){
         repository.save(star);
-        eventRepository.put(star,star.getUuid());
+        try{
+            eventRepository.put(star,star.getUuid());
+        }catch (Exception ignored){}
     }
 
     public void delete(UUID id){

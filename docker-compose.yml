@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  aui-planet:
+    image: aui-planet:1.0.0-SNAPSHOT
+    restart: always
+    ports:
+      - "8081:8080"
+  aui-star:
+    image: aui-star:1.0.0-SNAPSHOT
+    restart: always
+    environment:
+      AUI_PLANET_URL: "http://aui-planet:8080"
+    ports:
+      - "8082:8080"
+  aui-gateway:
+    image: aui-gateway:1.0.0-SNAPSHOT
+    restart: always
+    environment:
+      AUI_PLANET_URL: "http://aui-planet:8080"
+      AUI_STAR_URL: "http://aui-star:8080"
+      AUI_GATEWAY_HOST: "aui-gateway:8080"
+    ports:
+      - "8084:8080"
+  aui-angular:
+    image: aui-angular:1.0.0-SNAPSHOT
+    restart: always
+    environment:
+      API_URL: http://aui-gateway:8080/api
+    ports:
+      - "8087:80"

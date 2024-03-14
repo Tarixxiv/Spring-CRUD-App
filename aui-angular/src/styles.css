@@ -1,12 +1,140 @@
-/* You can add global styles to this file, and also import other style files */
-body{
-  margin:5%
+body {
+  background-color: #000;
+  overflow: hidden; /* Hide overflow to prevent scrollbars */
+  color: white;
+  display: flex; /* Use flexbox layout */
+  justify-content: center; /* Center content horizontally */
+}
+body::before{
+  opacity: .5;
 }
 
-div{
-  margin:1%
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensure it's behind other content */
+}
+body {
+  background-color: #222; /* Dark background color */
+  color: #eee; /* Light text color */
+  font-family: Arial, sans-serif; /* Font family */
 }
 
-table{
-  margin:1%
+/* Header styles */
+header {
+  background-color: #333; /* Dark header background color */
+  padding: 20px; /* Padding */
+  border-radius: 10px; /* Rounded corners */
+}
+
+header h2 {
+  margin: 0; /* Remove default margin */
+}
+
+/* Table styles */
+table {
+  align-items: center;
+  border-collapse: separate; /* Collapse table borders */
+  border-spacing: 0 10px;
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Ensure rounded corners are visible */
+}
+
+th, td {
+  padding: 10px; /* Cell padding */
+  padding: 10px; /* Cell padding */
+  vertical-align: middle; /* Align text vertically in the middle */
+}
+
+tr:hover th,
+tr:hover td {
+  background-color:#444;
+}
+
+tr:hover td:first-child  {
+  border-radius:6px 0 0 6px;
+}
+
+tr:hover td:last-child {
+  border-radius:0 6px 6px 0;
+}
+
+
+/* Links styles */
+a {
+  color: #ddd; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+  color: yellow; /* Link color on hover */
+}
+
+/* List element styles */
+
+
+tr {
+  background-color: #333; /* Dark list element background color */
+  overflow: hidden; /* Ensure rounded corners are visible */
+  margin: 2px;
+}
+
+
+
+/* Button styles */
+button {
+  background-color: #555; /* Button background color */
+  color: #eee; /* Button text color */
+  padding: 5px 10px; /* Padding */
+  border: none; /* Remove border */
+  cursor: pointer; /* Cursor style */
+  border-radius: 5px; /* Rounded corners */
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #777; /* Button background color on hover */
+}
+
+a.button-link {
+  display: inline-block; /* Ensure it's a block element */
+  background-color: #555; /* Button background color */
+  color: #eee; /* Button text color */
+  padding: 6px 16px; /* Padding */
+  border: none; /* Remove border */
+  cursor: pointer; /* Cursor style */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  font-size: 14px; /* Font size for Edit link */
+}
+
+a.button-link:hover {
+  background-color: #777; /* Button background color on hover */
+}
+
+a.button-link {
+  display: inline-block; /* Ensure it's a block element */
+  font-size: 14px; /* Set font size */
+  text-decoration: none; /* Remove underline */
+}
+
+article{
+  align-items: center;
+}
+
+input {
+  background-color: #444; /* Input background color */
+  color: #eee; /* Text color */
+  padding: 8px; /* Padding */
+  border: 1px solid #555; /* Border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 14px; /* Font size */
+  margin-left: 10px;
+  margin-bottom: 10px; /* Add space below the input */
+}
+
+input:focus {
+  outline: none; /* Remove outline on focus */
+  border-color: #777; /* Border color on focus */
 }
