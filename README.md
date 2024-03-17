@@ -22,7 +22,7 @@ This project is a CRUD (Create, Read, Update, Delete) application built using th
         <li>aui-star</li>
         <li>aui-planet</li>
         <li>aui-gateway</li>
-    <li>aui-angular (run instructions in module's README.md</li>
+    <li>aui-angular (run instructions in module's README.md)</li>
     </ul>
 </li>
 <li>open <a>localhost:4200</a> in an internet browser of your choice</li>
