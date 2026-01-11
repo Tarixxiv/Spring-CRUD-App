@@ -16,7 +16,7 @@ canvas {
   z-index: -1; /* Ensure it's behind other content */
 }
 body {
-  background-color: #222; /* Dark background color */
+  background-color: transparent; /* Dark background color */
   color: #eee; /* Light text color */
   font-family: Arial, sans-serif; /* Font family */
 }
@@ -86,7 +86,7 @@ tr {
 button {
   background-color: #555; /* Button background color */
   color: #eee; /* Button text color */
-  padding: 5px 10px; /* Padding */
+  padding: 7px 10px; /* Padding */
   border: none; /* Remove border */
   cursor: pointer; /* Cursor style */
   border-radius: 5px; /* Rounded corners */

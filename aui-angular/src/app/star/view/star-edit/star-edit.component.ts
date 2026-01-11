@@ -43,7 +43,7 @@ export class StarEditComponent implements OnInit{
 
   onSubmit(): void {
     this.starService.putStar(this.uuid!, this.star!)
-      .subscribe(() => this.router.navigate(['/stars']))
+      .subscribe(() => this.router.navigate(['']))
   }
 
 

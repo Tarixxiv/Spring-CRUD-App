@@ -34,7 +34,8 @@ export class StarCreateComponent implements OnInit{
 
     onSubmit(): void {
         this.starService.putNewStar(this.star!)
-            .subscribe(() => this.router.navigate(['/stars']))
+            .subscribe(() => this.router.navigate(['']))
+
     }
 
 
