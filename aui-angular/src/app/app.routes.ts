@@ -7,20 +7,11 @@ import {PlanetEditComponent} from "./planet/view/planet-edit/planet-edit.compone
 import {PlanetViewComponent} from "./planet/view/planet-view/planet-view.component";
 import {StarCreateComponent} from "./star/view/star-create/star-create.component";
 import {PlanetCreateComponent} from "./planet/view/planet-create/planet-create.component";
-import {HomeComponent} from "./home/home.component";
 
 export const routes: Routes = [
   {
-    component: HomeComponent,
+    component: StarListComponent,
     path: ""
-  },
-  {
-    component: StarListComponent,
-    path: "stars"
-  },
-  {
-    component: StarListComponent,
-    path: "stars"
   },
   {
     component: StarEditComponent,
